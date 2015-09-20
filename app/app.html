@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="./app.css">
+<section class="sample-app-content">
+  <hr />
+  <nav>
+    <a [router-link]="['/home']">Home</a>
+   <a [router-link]="['/about']">About</a>
+    <a [router-link]="['/drivers']">F1 Drivers</a>
+   <!--  <a [router-link]="['/events']">Events example</a>
+    <a [router-link]="['/httpdemo']">HTTP Demo</a>-->
+  </nav>
+  <hr/>
+  <br />
+  <router-outlet></router-outlet>
+</section>
