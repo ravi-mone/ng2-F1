@@ -1,10 +1,11 @@
-<h1>ngModel</h1>
-<input type="text" [(ng-model)]="searchQuery">
-{{searchQuery}}
+    <h1>ngModel, Needs FORM_DIRECTIVES</h1>
+    <input type="text" [(ng-model)]="searchQuery">
+    {{searchQuery}}
 
-<hr />
+    <hr />
 
 <section class="new-link">
+    <form (submit)="addArticle(newtitle, newlink)" >
     <div class="control-group">
         <div><label >Title:</label></div>
         <div><input name="title" #newtitle></div>
@@ -14,7 +15,8 @@
         <div><input name="link" #newlink></div>
     </div>
 
-    <button (click)="addArticle(newtitle, newlink)">Submit Link</button>
+    <button type="submit" >Submit Link</button>
+    </form>
 </section>
 <hr  />
 <section>
@@ -24,7 +26,7 @@
             <li><b>Title</b> |  <b>Link</b></li>
         </ul>
         <ul *ng-for="#article of articles;  #i = index">
-            <li> {{article.title}} | {{article.link}} <button (click)="deleteArticle(i)">X</button></li>
+            <li> {{i + 1}} : {{article.title}} | {{article.link}} <button (click)="deleteArticle(i)">X</button></li>
         </ul>
     </div>
 </section>

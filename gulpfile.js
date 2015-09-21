@@ -145,7 +145,7 @@ gulp.task('build.js.dev', function () {
 });
 
 gulp.task('build.assets.dev', ['build.js.dev'], function () {
-  return gulp.src([join(PATH.src.all, '**/*.html'), join(PATH.src.all, '**/*.css'), join(PATH.src.all, '**/*.json') , join(PATH.src.all, '**/*.jpg'), join(PATH.src.all, '**/flags/*.ico'), join(PATH.src.all, '**/css/fonts/*')])
+  return gulp.src([join(PATH.src.all, '**/*.html'), join(PATH.src.all, '**/*.css'), join(PATH.src.all, '**/*.json') , join(PATH.src.all, '**/*.jpg'), join(PATH.src.all, '**/flags/*.ico'), join(PATH.src.all, '**/assets/css/fonts/*')])
     .pipe(gulp.dest(PATH.dest.dev.all));
 });
 
