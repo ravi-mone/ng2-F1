@@ -6,7 +6,6 @@ To Fix: EXCEPTION: Cannot resolve all parameters for NamesList(?). Make sure the
 import { Inject, Injectable, OnInit } from 'angular2/angular2';
 import { Http } from 'angular2/http';
 
-
 @Injectable()
 export class NamesList implements OnInit {
 

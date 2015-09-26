@@ -8,7 +8,7 @@
   //Implemented blink-message `directive`
 </div>
 
-<alert *ng-for="#alert of alerts;#i = index" [type]="alert.type" (close)="closeAlert(i)">
+<alert *ng-for="#alert of alerts;#i = index" [type]="alert.type" [dismissible]="false" dismiss-on-timeout="0" (close)="closeAlert(i)">
   {{ alert.msg }}
 </alert>
 

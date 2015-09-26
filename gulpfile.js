@@ -38,7 +38,7 @@ var connectLivereload = require('connect-livereload');
 
 // --------------
 // Configuration.
-var PORT = 5558;
+var PORT = 5556;
 var LIVE_RELOAD_PORT = 4002;
 var APP_BASE = '/';
 
@@ -159,7 +159,7 @@ gulp.task('build.index.dev', function () {
 });
 
 gulp.task('build.app.dev', function (done) {
-  runSequence('clean.app.dev', 'build.assets.dev', 'build.index.dev', done);
+  runSequence('clean.app.dev', 'build.assets.dev', 'build.index.dev','build.ng2bootstrap.dev', done);
 });
 
 gulp.task('build.fonts.dev', function () {
