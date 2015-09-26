@@ -1,15 +1,16 @@
 import {Component, View, CORE_DIRECTIVES, EventEmitter, onComplete} from 'angular2/angular2';
+import { Inject, Injectable, OnInit } from 'angular2/angular2';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import UserRepo from '../../services/repositories/user_repo';
 import User from '../../services/models/user';
-import {Alert} from '../../ng2-bootstrap/alert/alert';
+
+
 @Component({
     selector: 'home',
-    events: ['statusChange']
 })
 @View({
     templateUrl: './components/home/home.html?v=<%= VERSION %>',
-    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, Alert]
+    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class Home {
     private loading:boolean;

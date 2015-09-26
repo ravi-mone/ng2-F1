@@ -79,7 +79,8 @@ var PATH = {
       ANGULAR_BUNDLES + '/router.dev.js',
       ANGULAR_BUNDLES + '/http.dev.js',
       './node_modules/bootstrap/dist/css/bootstrap.css',
-      './node_modules/bootstrap/fonts'
+      './node_modules/bootstrap/fonts',
+
     ],
     css: [
       './node_modules/bootstrap/dist/css/bootstrap.css'
@@ -166,8 +167,16 @@ gulp.task('build.fonts.dev', function () {
       .pipe(gulp.dest('./dist/dev/fonts/'));
 });
 
+gulp.task('build.ng2bootstrap.dev', function () {
+  return gulp.src(['./node_modules/ng2-bootstrap/components/**/*.ts'])
+      .pipe(plumber())
+      .pipe(tsc(tsProject))
+      .pipe(gulp.dest('./dist/dev/ng2-bootstrap/components/'))
+
+});
+
 gulp.task('build.dev', function (done) {
-  runSequence('clean.dev', 'build.lib.dev', 'build.app.dev', 'build.fonts.dev', done);
+  runSequence('clean.dev', 'build.lib.dev', 'build.app.dev', 'build.fonts.dev', 'build.ng2bootstrap.dev', done);
 });
 
 // --------------

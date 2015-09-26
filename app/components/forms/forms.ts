@@ -1,5 +1,5 @@
-import {Component, View, bootstrap} from 'angular2/angular2';
-import {FormBuilder, Validators, FORM_DIRECTIVES, ControlGroup} from 'angular2/core';
+import {Component, View, bootstrap, FormBuilder, Validators, FORM_DIRECTIVES, ControlGroup} from 'angular2/angular2';
+//import {FormBuilder, Validators, FORM_DIRECTIVES, ControlGroup} from 'angular2/core';
 @Component({
     selector: 'login-comp',
     viewBindings: [FormBuilder]
@@ -28,3 +28,41 @@ class LoginComp {
         });
     }
 }
+
+/*
+import {Component, View, bootstrap, FormBuilder,
+    Validators, FORM_DIRECTIVES, ControlGroup} from 'angular2/angular2';
+
+@Component({
+    selector: 'hello',
+    viewBindings: [FormBuilder]
+})
+@View({
+    template: `
+    <form [ng-form-model]="loginForm">
+      Login <input ng-control="login">
+      <div ng-control-group="passwordRetry">
+        Password <input type="password" ng-control="password">
+        Confirm password <input type="text" ng-control="passwordConfirmation">
+      </div>
+    </form>
+
+    <pre>{{loginForm.value | json}}</pre>
+  `,
+    directives: [FORM_DIRECTIVES]
+})
+class LoginComp {
+    loginForm: ControlGroup;
+    constructor(builder: FormBuilder) {
+        this.loginForm = builder.group({
+            login: ["", Validators.required],
+            passwordRetry: builder.group({
+                password: ["", Validators.required],
+                passwordConfirmation: ["", Validators.required]
+            })
+        });
+    }
+}
+
+bootstrap(LoginComp);
+    */
