@@ -14,6 +14,10 @@ import UserRepo from '../../services/repositories/user_repo';
 @Component({
     selector: 'f1Drivers',
     viewInjector: [routerInjectables],
+    /*
+    * bindings are available to a component and its children,
+    * viewBindings are only available to a particular view,
+    * */
     viewBindings:[NamesList]
 })
 
@@ -31,9 +35,11 @@ export class F1Drivers implements OnInit  {
     }
     onInit() {
         var result = this.list.get();
-        this.driverObj =  result[0]['DriverStandings'];
-        this.driversList = this.driverObj;
-        this.pageSelected = this.driverObj.length;
+        if(result) {
+            this.driverObj = result[0]['DriverStandings'];
+            this.driversList = this.driverObj;
+            this.pageSelected = this.driverObj.length;
+        }
     }
     showSelected(limitTo){
         console.log('limitTo' , limitTo);

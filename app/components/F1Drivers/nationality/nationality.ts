@@ -3,7 +3,7 @@
  */
 import {Component, View} from 'angular2/angular2';
 @Component({
-    selector: 'Nationality',
+    selector: 'nationality',
     properties: ['text: cty'],
 })
 @View({
@@ -12,7 +12,7 @@ import {Component, View} from 'angular2/angular2';
 export class Nationality {
     nationality:string;
     constructor(){}
-    // This will get called every time with the new value when the 'tooltip' property changes
+    // This will get called every time with the new value when the 'cty' property changes
     set text(value: string) {
         this.nationality = value;
    }

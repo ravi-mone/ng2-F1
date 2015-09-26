@@ -1,10 +1,11 @@
-import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, View, CORE_DIRECTIVES, EventEmitter, onComplete} from 'angular2/angular2';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import UserRepo from '../../services/repositories/user_repo';
 import User from '../../services/models/user';
 import {Alert} from '../../ng2-bootstrap/alert/alert';
 @Component({
-    selector: 'home'
+    selector: 'home',
+    events: ['statusChange']
 })
 @View({
     templateUrl: './components/home/home.html?v=<%= VERSION %>',
@@ -12,10 +13,19 @@ import {Alert} from '../../ng2-bootstrap/alert/alert';
 })
 export class Home {
     private loading:boolean;
+    statusChange: EventEmitter;
+
     //Bootstrap alert
     private alertOpened:boolean = true;
     userName:string ='';
-    constructor(private repo:UserRepo) { console.log(UserRepo); }
+    constructor(private repo:UserRepo) {
+        console.log(UserRepo);
+        this.statusChange = new EventEmitter();
+    }
+    onComplete() {
+        console.log('inside onComplete');
+        this.statusChange.next('completed');
+    }
     addUser(currentUser) {
         this.loading = true;
         console.log(this.repo.getUser)

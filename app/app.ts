@@ -10,6 +10,7 @@ import {F1Drivers}    from './components/F1Drivers/F1Drivers';
 import {Details}      from './components/F1Drivers/Details/details';
 import {EventsDemo}   from './components/Events/events';
 import {GitHubAPI}    from './services/api/github_api';
+import {LoginComp}    from './components/forms/forms';
 import UserRepo       from './services/repositories/user_repo'; //here, {} aren't used when export default ...( #http://stackoverflow.com/questions/21117160/what-is-export-default-in-javascript)
 /*
 *Create a whole component. Requires a @View.
@@ -33,8 +34,8 @@ import UserRepo       from './services/repositories/user_repo'; //here, {} aren'
     { path: '/about', component: About, as: 'about' },
     { path: '/drivers', component: F1Drivers, as: 'drivers' },
     { path: '/details/:name', component: Details, as: 'details' },
-    { path: '/events', component: EventsDemo, as: 'events' }
-      /* { path: '/httpdemo', component: HelloCmp, as: 'httpdemo' }*/
+    { path: '/events', component: EventsDemo, as: 'events' },
+    //{ path: '/form', component: LoginComp, as: 'form' }
 ])
 @View({
   templateUrl: './app.html?v=<%= VERSION %>',
