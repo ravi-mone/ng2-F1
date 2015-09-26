@@ -1,13 +1,12 @@
 /// <reference path="../node_modules/ng2-bootstrap/typings/tsd.d.ts" />
 import {Component, View, CORE_DIRECTIVES, Pipe, Inject, Injectable} from 'angular2/angular2';
 import {ChatBlinkDirective} from '../directive/directive';
-import {Alert} from '../../ng2-bootstrap/components/alert/alert';
+import {Alert} from 'node_modules/ng2-bootstrap/components/alert/alert';
 
 //import {Alert} from 'ng2-bootstrap/alert/alert';
 @Injectable()
 @Component({
-  selector: 'about',
-
+  selector: 'about'
 })
 @View({
   templateUrl: './components/about/about.html?v=<%= VERSION %>',

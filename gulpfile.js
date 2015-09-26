@@ -38,7 +38,7 @@ var connectLivereload = require('connect-livereload');
 
 // --------------
 // Configuration.
-var PORT = 5557;
+var PORT = 5558;
 var LIVE_RELOAD_PORT = 4002;
 var APP_BASE = '/';
 
@@ -171,7 +171,7 @@ gulp.task('build.ng2bootstrap.dev', function () {
   return gulp.src(['./node_modules/ng2-bootstrap/components/**/*.ts'])
       .pipe(plumber())
       .pipe(tsc(tsProject))
-      .pipe(gulp.dest('./dist/dev/ng2-bootstrap/components/'))
+      .pipe(gulp.dest('./dist/dev/node_modules/ng2-bootstrap/components/'))
 
 });
 
