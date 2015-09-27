@@ -1,6 +1,5 @@
 <div [hidden]="!loading">Loading...</div>
-
-<alert type="info" fade="true" *ng-if="userName" >
+<alert *ng-if="userName" type="info" (close)="closeAlert(i)" dismiss-on-timeout="3000">
     User <i>{{userName}}</i> found.
 </alert>
 

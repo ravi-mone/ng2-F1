@@ -1,15 +1,15 @@
 /// <reference path="../node_modules/ng2-bootstrap/typings/tsd.d.ts" />
-import {Component, View, CORE_DIRECTIVES, ElementRef} from 'angular2/angular2';
+import {Component, View, CORE_DIRECTIVES, Pipe, encapsulation} from 'angular2/angular2';
 import {ChatBlinkDirective} from '../directive/directive';
 import {Alert} from 'node_modules/ng2-bootstrap/components/alert/alert';
+
 @Component({
   selector: 'about',
+
 })
 @View({
   templateUrl: './components/about/about.html?v=<%= VERSION %>',
   styleUrls : ['about.css'],
-  properties: ['type', 'dismissible', 'dismissOnTimeout'],
-  events: ['close'],
   directives: [CORE_DIRECTIVES, ChatBlinkDirective, Alert]
 })
 export class About {
