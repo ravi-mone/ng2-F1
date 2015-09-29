@@ -8,8 +8,7 @@ import {driverHeader} from './Header/driverheader'
 
 import {NamesList} from '../../services/models/NameList';
 import UserRepo from '../../services/repositories/user_repo';
-
-
+import {Alert} from 'node_modules/ng2-bootstrap/components/alert/alert';
 
 @Component({
     selector: 'f1Drivers',
@@ -23,7 +22,7 @@ import UserRepo from '../../services/repositories/user_repo';
 
 @View({
     templateUrl: './components/F1Drivers/f1Drivers.html?v=<%= VERSION %>',
-    directives:[Points, Nationality, driverHeader, RouterLink, CORE_DIRECTIVES]
+    directives:[Points, Nationality, driverHeader, RouterLink, CORE_DIRECTIVES, Alert]
     //viewBindings: [httpInjectables]
 })
 export class F1Drivers implements OnInit  {
