@@ -1,17 +1,7 @@
-<div ng-class="header">
-  <article>
+<p class="header">
     Demonstrating <code>styleUrls</code>
-  </article>
-</div>
+</p>
 <br />
 <div blink-message>
   //Implemented blink-message `directive`
 </div>
-
-<alert *ng-for="#alert of alerts;#i = index" [type]="alert.type" (close)="closeAlert(i)">
-  {{ alert.msg }}
-</alert>
-
-<alert dismiss-on-timeout="3000">This alert will dismiss in 3s</alert>
-
-<button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>

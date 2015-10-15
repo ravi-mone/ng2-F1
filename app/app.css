@@ -1,3 +1,6 @@
+body{
+  padding: 20px;
+}
 .sample-app-content {
   font-family: Verdana;
 }
@@ -136,4 +139,9 @@
 
 .tabs-content {
 
+}
+
+.header{
+  background-color: grey;
+  color: white;
 }

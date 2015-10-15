@@ -10,21 +10,24 @@
 </li>
 </ul>
 <hr/>
-<alert type="info" >
+<div >
 Show:
-<ul class="inline" role="menu" >
-    <li><a (click)="showSelected(5);">5</a></li>
-    <li><a (click)="showSelected(10);">10</a></li>
-    <li><a (click)="showSelected(20);">20</a></li>
-    <li><a (click)="showSelected(driversList.length);">All</a></li>
-</ul>
-</alert>
-<!--<button type="button" class="btn btn-primary">Showing {{(driverObj.length >= 1 && driverObj.length < driversList.length)? driverObj.length :  pageSelected }} records</button>-->
+<div class="col-lg-12"  >
+    <div class="col-lg-3"><a (click)="showSelected(5);">5</a></div>
+    <div class="col-lg-3"><a (click)="showSelected(10);">10</a></div>
+    <div class="col-lg-3"><a (click)="showSelected(20);">20</a></div>
+    <div class="col-lg-3"><a (click)="showSelected(driversList.length);">All</a></div>
+</div>
+</div>
 
 <!--NOTE : since you are using ng-switch, ng-switch-when, ng-switch-default ,
 So import :
 import { NgSwitch, NgSwitchWhen, NgSwitchDefault} from 'angular2/angular2';
 -->
+<br />
+<p class="header">
+    Demonstrating <code>styleUrls</code>
+</p>
 <alert type="info" >
 Total  {{driverObj.length}},  [
 <span [ng-switch]="pageSelected" class="float-left">

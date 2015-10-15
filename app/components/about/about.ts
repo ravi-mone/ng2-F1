@@ -1,7 +1,6 @@
 /// <reference path="../node_modules/ng2-bootstrap/typings/tsd.d.ts" />
 import {Component, View, CORE_DIRECTIVES, Pipe, encapsulation} from 'angular2/angular2';
 import {ChatBlinkDirective} from '../directive/directive';
-import {Alert} from 'node_modules/ng2-bootstrap/components/alert/alert';
 
 @Component({
   selector: 'about',
@@ -9,31 +8,11 @@ import {Alert} from 'node_modules/ng2-bootstrap/components/alert/alert';
 })
 @View({
   templateUrl: './components/about/about.html?v=<%= VERSION %>',
-  styleUrls : ['about.css'],
-  directives: [CORE_DIRECTIVES, ChatBlinkDirective, Alert]
+  styleUrls : ['./components/about/about.css'],
+  directives: [CORE_DIRECTIVES, ChatBlinkDirective]
 })
 export class About {
-  constructor() {
-  }
-  alerts:Array<Object> = [
-    {
-      type: 'danger',
-      msg: 'Oh snap! Change a few things up and try submitting again.'
-    },
-    {
-      type: 'success',
-      msg: 'Well done! You successfully read this important alert message.',
-      closable: true
-    }
-  ];
-
-  closeAlert(i:number) {
-    this.alerts.splice(i, 1);
-  }
-
-  addAlert() {
-    this.alerts.push({msg: 'Another alert!', closable: true});
-  }
+  constructor() {  }
 }
 
 
